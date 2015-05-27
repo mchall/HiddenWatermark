@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatermarkingDemo", "WatermarkingDemo\WatermarkingDemo.csproj", "{B047A6FD-F400-46D0-92D1-BFD258D354FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiddenWatermark", "HiddenWatermark\HiddenWatermark.csproj", "{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CustomActions|Any CPU = CustomActions|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Publish|Any CPU = Publish|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B047A6FD-F400-46D0-92D1-BFD258D354FE}.CustomActions|Any CPU.ActiveCfg = Release|Any CPU
+		{B047A6FD-F400-46D0-92D1-BFD258D354FE}.CustomActions|Any CPU.Build.0 = Release|Any CPU
+		{B047A6FD-F400-46D0-92D1-BFD258D354FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B047A6FD-F400-46D0-92D1-BFD258D354FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B047A6FD-F400-46D0-92D1-BFD258D354FE}.Publish|Any CPU.ActiveCfg = Release|Any CPU
+		{B047A6FD-F400-46D0-92D1-BFD258D354FE}.Publish|Any CPU.Build.0 = Release|Any CPU
+		{B047A6FD-F400-46D0-92D1-BFD258D354FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B047A6FD-F400-46D0-92D1-BFD258D354FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}.CustomActions|Any CPU.ActiveCfg = Release|Any CPU
+		{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}.CustomActions|Any CPU.Build.0 = Release|Any CPU
+		{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}.Publish|Any CPU.ActiveCfg = Release|Any CPU
+		{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}.Publish|Any CPU.Build.0 = Release|Any CPU
+		{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

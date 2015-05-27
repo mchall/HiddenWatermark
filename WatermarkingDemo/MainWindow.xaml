@@ -1,0 +1,47 @@
+﻿<Window x:Class="WatermarkingDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />          
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        
+        
+        <StackPanel Grid.ColumnSpan="3">
+            <TextBlock Text="Watermarking Demo" FontWeight="ExtraBold" FontSize="30" HorizontalAlignment="Center" />
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <TextBlock x:Name="SimilarityText" FontSize="12" VerticalAlignment="Center" Padding="5" />
+                <Image x:Name="FailureImage" Source="Invalid.png" Height="25" Visibility="Collapsed" VerticalAlignment="Center" />
+                <Image x:Name="SuccessImage" Source="Valid.png" Height="25" Visibility="Collapsed" VerticalAlignment="Center" />
+            </StackPanel>
+        </StackPanel>
+
+        <Image x:Name="OriginalImage" Grid.Row="1" Grid.Column="0" Margin="5" />
+        <Image x:Name="WatermarkedImage" Grid.Row="1" Grid.Column="1" Margin="5" />
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center">
+            <Image x:Name="RetrievedWatermark" Margin="5" />
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="5">
+            <Button x:Name="BtnLoadImage" Content="Load" Margin="5" Click="BtnLoadImage_Click" FontSize="16" />
+            <Button x:Name="BtnEmbedWatermark" Content="Embed Watermark" Margin="5" Click="BtnEmbedWatermark_Click" FontSize="16" />
+            <TextBlock x:Name="EmbedTime" Margin="5" FontSize="12" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="5">
+            <Button x:Name="BtnSaveWatermarkedImage" Content="Save" Margin="5" Click="BtnSaveWatermarkedImage_Click" FontSize="16" />
+            <Button x:Name="BtnLoadWatermarkedImage" Content="Load" Margin="5" Click="BtnLoadWatermarkedImage_Click" FontSize="16" />
+            <Button x:Name="BtnRetrieveWatermark" Content="Retrieve Watermark" Margin="5" Click="BtnRetrieveWatermark_Click" FontSize="16" />
+            <TextBlock x:Name="RetrieveTime" Margin="5" FontSize="12" />
+        </StackPanel>
+    </Grid>
+</Window>
