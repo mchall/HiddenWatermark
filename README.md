@@ -1,6 +1,6 @@
 # Hidden Watermark
-Embeds a hidden watermark in an image and resistant to various forms of attack. 
-Uses a blind DWT-DCT approach.
+Embeds a hidden watermark in an image using a blind DWT-DCT approach. 
+Unlike steganographic methods, this hidden watermark if resistant to various forms of attack. Limited to a black and white 32x32 watermark image.
 
 **Original Image** + **Watermark** = **Watermarked Image**
 
