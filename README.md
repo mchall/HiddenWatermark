@@ -6,6 +6,8 @@ Unlike steganographic methods, this hidden watermark if resistant to various for
 
 ![Original](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/original.jpg) + ![Watermark](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/watermark.jpg) = ![Embedded Image](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/embeddedwatermark.jpg)
 
+> Image source: http://commons.wikimedia.org/wiki/Garden#/media/File:Rikugien3.jpg
+
 ### Usage ###
 
 The following code instantiates the watermark class with the bytes read from a 32x32 watermark image. Then the watermark is embedded in a file, and the watermark is retrieved afterwards. 
