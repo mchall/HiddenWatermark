@@ -1,5 +1,5 @@
 # Hidden Watermark
-Embeds a hidden watermark in an image and resistant to various forms of attack. 
+Embeds a hidden watermark in an image resistant to various forms of attack. 
 Uses a blind DWT-DCT approach.
 
 **Original Image** + **Watermark** = **Watermarked Image**
