@@ -17,6 +17,6 @@ Resize (1024x768->360x270) | ![4](https://raw.githubusercontent.com/mcsyko/hidde
 Visible Watermarking | ![5](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/5.jpg)
 Crop | ![6](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/6.jpg)
 JPEG Quality 20% | ![7](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/7.jpg)
-Grayscale | ![8](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/8.jpg)
+Grayscale | ![8](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/8.jpg) *(not resistant)*
 PrintScreen | ![9](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/9.jpg)
 Noise | ![10](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/10.jpg)
