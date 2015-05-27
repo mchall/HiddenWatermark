@@ -1,10 +1,34 @@
 # Hidden Watermark
-Embeds a hidden watermark in an image resistant to various forms of attack. 
+Embeds a hidden watermark in an image and resistant to various forms of attack. 
 Uses a blind DWT-DCT approach.
 
 **Original Image** + **Watermark** = **Watermarked Image**
 
 ![Original](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/original.jpg) + ![Watermark](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/watermark.jpg) = ![Embedded Image](https://raw.githubusercontent.com/mcsyko/hiddenwatermark/master/Readme_Img/embeddedwatermark.jpg)
+
+### Usage ###
+
+The following code instantiates the watermark class with the bytes read from a 32x32 watermark image. Then the watermark is embedded in a file, and the watermark is retrieved afterwards. 
+
+```C#
+var watermarkBytes = File.ReadAllBytes(watermarkLocation);
+Watermark watermark = new Watermark(watermarkBytes);
+
+var fileBytes = File.ReadAllBytes(imageLocation);
+var newFileBytes = watermark.EmbedWatermark(fileBytes);
+
+var result = watermark.RetrieveWatermark(newFileBytes);
+```
+
+The following code instantiates the watermark class with the bytes read from a 32x32 watermark image and turns crop support on. Then the watermark is embedded in a file and simultaneously checked if an embedded watermark already exists. 
+
+```C#
+var watermarkBytes = File.ReadAllBytes(watermarkLocation);
+Watermark watermark = new Watermark(watermarkBytes, true);
+
+var fileBytes = File.ReadAllBytes(imageLocation);
+var result = watermark.RetrieveAndEmbedWatermark(fileBytes);
+```
 
 ### Watermark recovery results ###
 
