@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Accord.Math;
-using Accord.Math.Wavelets;
 
-namespace HiddenWatermark
+namespace Accord.Math
 {
-    public class ParallelHaar : IWavelet
+    public class ParallelHaar
     {
         private const double w0 = 0.5;
         private const double w1 = -0.5;

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Accord.Math;
-using Accord.Math.Wavelets;
 
 namespace HiddenWatermark
 {
