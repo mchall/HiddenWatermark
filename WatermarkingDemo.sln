@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatermarkingDemo", "Waterma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiddenWatermark", "HiddenWatermark\HiddenWatermark.csproj", "{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiddenWatermark.Tests", "HiddenWatermark.Tests\HiddenWatermark.Tests.csproj", "{9C29C399-77A2-4022-82A0-63FA9B3D70DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CustomActions|Any CPU = CustomActions|Any CPU
@@ -31,6 +33,14 @@ Global
 		{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}.Publish|Any CPU.Build.0 = Release|Any CPU
 		{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C29C399-77A2-4022-82A0-63FA9B3D70DE}.CustomActions|Any CPU.ActiveCfg = Release|Any CPU
+		{9C29C399-77A2-4022-82A0-63FA9B3D70DE}.CustomActions|Any CPU.Build.0 = Release|Any CPU
+		{9C29C399-77A2-4022-82A0-63FA9B3D70DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C29C399-77A2-4022-82A0-63FA9B3D70DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C29C399-77A2-4022-82A0-63FA9B3D70DE}.Publish|Any CPU.ActiveCfg = Release|Any CPU
+		{9C29C399-77A2-4022-82A0-63FA9B3D70DE}.Publish|Any CPU.Build.0 = Release|Any CPU
+		{9C29C399-77A2-4022-82A0-63FA9B3D70DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C29C399-77A2-4022-82A0-63FA9B3D70DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
