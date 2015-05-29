@@ -102,7 +102,7 @@ namespace WatermarkingDemo
             RetrieveTime.Text = String.Format("{0}ms", sw.ElapsedMilliseconds);
             SimilarityText.Text = String.Format("Similarity: {0}%", result.Similarity);
 
-            if (result.Similarity >= 65 || result.Similarity <= 35)
+            if (result.WatermarkDetected)
             {
                 SuccessImage.Visibility = Visibility.Visible;
                 FailureImage.Visibility = Visibility.Collapsed;

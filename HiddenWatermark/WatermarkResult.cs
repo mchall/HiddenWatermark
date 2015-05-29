@@ -12,6 +12,16 @@ namespace HiddenWatermark
         public double Similarity { get; private set; }
         public byte[] RecoveredWatermark { get; private set; }
 
+        public bool WatermarkDetected
+        {
+            get
+            {
+                if (Similarity >= 65 || Similarity <= 35)
+                    return true;
+                return false;
+            }
+        }
+
         public WatermarkResult()
         { }
 
