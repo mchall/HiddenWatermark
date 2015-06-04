@@ -20,6 +20,15 @@ namespace HiddenWatermark
         private const int BlockSize = 4;
 
         /// <summary>
+        /// Turn clipping support on/off
+        /// </summary>
+        public bool ClipSupport
+        {
+            get { return _imageHelper.ClipSupport; }
+            set { _imageHelper.ClipSupport = value; }
+        }
+
+        /// <summary>
         /// Creates a new watermarking class.
         /// <para>This class caches some watermark data, so it's more efficient to keep an instance rather than create a new one for every embed operation.</para> 
         /// </summary>
