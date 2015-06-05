@@ -66,9 +66,22 @@ namespace HiddenWatermark
                 {
                     var i = hPos + w;
 
-                    pixels[i] = ToByte(pixels[i] + 128 - wmPixels[i]);
-                    pixels[i + 1] = ToByte(pixels[i + 1] + 128 - wmPixels[i + 1]);
-                    //pixels[i + 2] = ToByte(pixels[i + 2] + 128 - wmPixels[i + 2]);
+                    bool nextSame = false, prevSame = false;
+                    if (i > 0 && pixels[i] == pixels[i - pixelSize] && pixels[i + 1] == pixels[i + 1 - pixelSize])
+                    {
+                        nextSame = true;
+                    }
+                    if (i + pixelSize < pixels.Length && pixels[i] == pixels[i + pixelSize] && pixels[i + 1] == pixels[i + 1 + pixelSize])
+                    {
+                        prevSame = true;
+                    }
+
+                    if (!nextSame || !prevSame)
+                    {
+                        pixels[i] = ToByte(pixels[i] + 128 - wmPixels[i]);
+                        pixels[i + 1] = ToByte(pixels[i + 1] + 128 - wmPixels[i + 1]);
+                        //pixels[i + 2] = ToByte(pixels[i + 2] + 128 - wmPixels[i + 2]);
+                    }
                 }
             });
 
