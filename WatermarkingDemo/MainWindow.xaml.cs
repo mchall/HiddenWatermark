@@ -18,7 +18,6 @@ namespace WatermarkingDemo
     public partial class MainWindow : Window
     {
         private string _imageLocation;
-        private string _watermarkLocation;
         private string _watermarkImageLocation;
         private string _recoveredWatermarkLocation;
 
@@ -29,15 +28,13 @@ namespace WatermarkingDemo
             InitializeComponent();
 
             _imageLocation = AppDomain.CurrentDomain.BaseDirectory + "original.jpg";
-            _watermarkLocation = AppDomain.CurrentDomain.BaseDirectory + "watermark.jpg";
             _watermarkImageLocation = AppDomain.CurrentDomain.BaseDirectory + "embeddedwatermark.jpg";
             _recoveredWatermarkLocation = AppDomain.CurrentDomain.BaseDirectory + "recoveredwatermark.jpg";
 
             var fileBytes = File.ReadAllBytes(_imageLocation);
             RenderImageBytes(OriginalImage, fileBytes);
 
-            var watermarkBytes = File.ReadAllBytes(_watermarkLocation);
-            _watermark = new Watermark(watermarkBytes, true);
+            _watermark = new Watermark(true);
         }
 
         private void BtnLoadImage_Click(object sender, RoutedEventArgs e)

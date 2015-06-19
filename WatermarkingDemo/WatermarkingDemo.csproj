@@ -97,11 +97,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="watermark.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="original.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

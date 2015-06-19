@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Accord.Math;
@@ -27,6 +29,15 @@ namespace HiddenWatermark
             get { return _imageHelper.ClipSupport; }
             set { _imageHelper.ClipSupport = value; }
         }
+
+        /// <summary>
+        /// Creates a new watermarking class.
+        /// <para>This class caches some watermark data, so it's more efficient to keep an instance rather than create a new one for every embed operation.</para> 
+        /// </summary>
+        /// <param name="clipSupport">Whether the algorithm should support clipping</param>
+        public Watermark(bool clipSupport = false)
+            : this(DefaultWatermark, clipSupport)
+        { }
 
         /// <summary>
         /// Creates a new watermarking class.
@@ -65,6 +76,20 @@ namespace HiddenWatermark
                 throw new WatermarkException("Watermark must be 32x32 image");
             }
             GenerateWatermarkDiff();
+        }
+
+        private static byte[] DefaultWatermark
+        {
+            get 
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+                using (var stream = assembly.GetManifestResourceStream("HiddenWatermark.watermark.jpg"))
+                using (var ms = new MemoryStream())
+                {
+                    stream.CopyTo(ms);
+                    return ms.ToArray();
+                }
+            }
         }
 
         private void GenerateWatermarkDiff()
