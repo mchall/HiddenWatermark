@@ -11,26 +11,23 @@ namespace HiddenWatermark.Tests
         [TestMethod]
         public void Watermark_Retrieve()
         {
-            Watermark watermark = new Watermark();
-            var markedImage = watermark.EmbedWatermark(GetImageBytes());
+            var markedImage = Watermark.Default.EmbedWatermark(GetImageBytes());
 
-            Assert.IsTrue(watermark.RetrieveWatermark(markedImage).WatermarkDetected);
+            Assert.IsTrue(Watermark.Default.RetrieveWatermark(markedImage).WatermarkDetected);
         }
 
         [TestMethod]
         public void Watermark_Retrieve_False()
         {
-            Watermark watermark = new Watermark();
-            Assert.IsFalse(watermark.RetrieveWatermark(GetImageBytes()).WatermarkDetected);
+            Assert.IsFalse(Watermark.Default.RetrieveWatermark(GetImageBytes()).WatermarkDetected);
         }
 
         [TestMethod]
         public void Watermark_RetrieveAndEmbed()
         {
-            Watermark watermark = new Watermark();
-            var markedImage = watermark.EmbedWatermark(GetImageBytes());
+            var markedImage = Watermark.Default.EmbedWatermark(GetImageBytes());
 
-            var result = watermark.RetrieveAndEmbedWatermark(markedImage);
+            var result = Watermark.Default.RetrieveAndEmbedWatermark(markedImage);
 
             Assert.IsTrue(result.WatermarkDetected);
             Assert.IsNotNull(result.WatermarkedImage);
@@ -39,8 +36,7 @@ namespace HiddenWatermark.Tests
         [TestMethod]
         public void Watermark_RetrieveAndEmbed_False()
         {
-            Watermark watermark = new Watermark();
-            var result = watermark.RetrieveAndEmbedWatermark(GetImageBytes());
+            var result = Watermark.Default.RetrieveAndEmbedWatermark(GetImageBytes());
 
             Assert.IsFalse(result.WatermarkDetected);
             Assert.IsNotNull(result.WatermarkedImage);
