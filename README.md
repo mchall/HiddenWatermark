@@ -10,11 +10,10 @@ Unlike steganographic methods, this hidden watermark if resistant to various for
 
 ### Usage ###
 
-The following code instantiates the watermark class with the bytes read from a 32x32 watermark image. Then the watermark is embedded in a file, and the watermark is retrieved afterwards. 
+The following code instantiates the watermark class with the default watermark image. Then the watermark is embedded in a file, and the watermark is retrieved afterwards. 
 
 ```C#
-var watermarkBytes = File.ReadAllBytes(watermarkLocation);
-Watermark watermark = new Watermark(watermarkBytes);
+Watermark watermark = new Watermark();
 
 var fileBytes = File.ReadAllBytes(imageLocation);
 var newFileBytes = watermark.EmbedWatermark(fileBytes);
