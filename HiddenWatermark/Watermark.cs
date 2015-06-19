@@ -11,6 +11,19 @@ namespace HiddenWatermark
 {
     public class Watermark
     {
+        private static Watermark _default;
+        public static Watermark Default
+        {
+            get
+            {
+                if (_default == null)
+                {
+                    _default = new Watermark();
+                }
+                return _default;
+            }
+        }
+
         private ImageHelpers _imageHelper;
 
         private RgbData _watermarkPixels;
