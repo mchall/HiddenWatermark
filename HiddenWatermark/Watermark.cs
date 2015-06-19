@@ -46,42 +46,27 @@ namespace HiddenWatermark
         /// <summary>
         /// Creates a new watermarking class.
         /// <para>This class caches some watermark data, so it's more efficient to keep an instance rather than create a new one for every embed operation.</para> 
+        /// <para>Defaults clipping sizes are 1024x768, 911x683, 832x624, 800x600, 744x558, 700x525, 640x480, 600x450, 568x426, 508x373, 480x360, 448x336, 400x300, 360x270, 333x250.</para> 
         /// </summary>
         /// <param name="clipSupport">Whether the algorithm should support clipping</param>
-        public Watermark(bool clipSupport = false)
-            : this(DefaultWatermark, clipSupport)
+        /// <param name="clippingWidths">Custom clipping widths</param>
+        /// <param name="clippingHeights">Custom clipping heights</param>
+        public Watermark(bool clipSupport = false, IEnumerable<int> clippingWidths = null, IEnumerable<int> clippingHeights = null)
+            : this(DefaultWatermark, clipSupport, clippingWidths, clippingHeights)
         { }
 
         /// <summary>
         /// Creates a new watermarking class.
         /// <para>This class caches some watermark data, so it's more efficient to keep an instance rather than create a new one for every embed operation.</para> 
+        /// <para>Defaults clipping sizes are 1024x768, 911x683, 832x624, 800x600, 744x558, 700x525, 640x480, 600x450, 568x426, 508x373, 480x360, 448x336, 400x300, 360x270, 333x250.</para> 
         /// </summary>
         /// <param name="watermarkBytes">32x32 watermark image</param>
         /// <param name="clipSupport">Whether the algorithm should support clipping</param>
-        public Watermark(byte[] watermarkBytes, bool clipSupport = false)
+        /// <param name="clippingWidths">Custom clipping widths</param>
+        /// <param name="clippingHeights">Custom clipping heights</param>
+        public Watermark(byte[] watermarkBytes, bool clipSupport = false, IEnumerable<int> clippingWidths = null, IEnumerable<int> clippingHeights = null)
         {
-            _imageHelper = new ImageHelpers(clipSupport, null, null);
-
-            _watermarkPixels = _imageHelper.ReadPixels(watermarkBytes);
-            if (_watermarkPixels.Height != WatermarkSize || _watermarkPixels.Width != WatermarkSize)
-            {
-                throw new WatermarkException("Watermark must be 32x32 image");
-            }
-            GenerateWatermarkDiff();
-        }
-
-        /// <summary>
-        /// Creates a new watermarking class.
-        /// <para>This class caches some watermark data, so it's more efficient to keep an instance rather than create a new one for every embed operation.</para> 
-        /// <para>Defaults sizes are 1024x768, 911x683, 832x624, 800x600, 744x558, 700x525, 640x480, 600x450, 568x426, 508x373, 480x360, 448x336, 400x300, 360x270, 333x250.</para> 
-        /// </summary>
-        /// <param name="watermarkBytes">32x32 watermark image</param>
-        /// <param name="clippingSizes">Custom supported clipping sizes</param>
-        public Watermark(byte[] watermarkBytes, List<System.Drawing.Size> clippingSizes)
-        {
-            var widths = clippingSizes.Select(s => s.Width);
-            var heights = clippingSizes.Select(s => s.Height);
-            _imageHelper = new ImageHelpers(true, widths, heights);
+            _imageHelper = new ImageHelpers(clipSupport, clippingWidths, clippingHeights);
 
             _watermarkPixels = _imageHelper.ReadPixels(watermarkBytes);
             if (_watermarkPixels.Height != WatermarkSize || _watermarkPixels.Width != WatermarkSize)

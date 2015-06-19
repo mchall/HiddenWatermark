@@ -11,7 +11,7 @@ namespace HiddenWatermark.Tests
         [TestMethod]
         public void Watermark_Retrieve()
         {
-            Watermark watermark = new Watermark(GetWatermarkBytes());
+            Watermark watermark = new Watermark();
             var markedImage = watermark.EmbedWatermark(GetImageBytes());
 
             Assert.IsTrue(watermark.RetrieveWatermark(markedImage).WatermarkDetected);
@@ -20,14 +20,14 @@ namespace HiddenWatermark.Tests
         [TestMethod]
         public void Watermark_Retrieve_False()
         {
-            Watermark watermark = new Watermark(GetWatermarkBytes());
+            Watermark watermark = new Watermark();
             Assert.IsFalse(watermark.RetrieveWatermark(GetImageBytes()).WatermarkDetected);
         }
 
         [TestMethod]
         public void Watermark_RetrieveAndEmbed()
         {
-            Watermark watermark = new Watermark(GetWatermarkBytes());
+            Watermark watermark = new Watermark();
             var markedImage = watermark.EmbedWatermark(GetImageBytes());
 
             var result = watermark.RetrieveAndEmbedWatermark(markedImage);
@@ -39,7 +39,7 @@ namespace HiddenWatermark.Tests
         [TestMethod]
         public void Watermark_RetrieveAndEmbed_False()
         {
-            Watermark watermark = new Watermark(GetWatermarkBytes());
+            Watermark watermark = new Watermark();
             var result = watermark.RetrieveAndEmbedWatermark(GetImageBytes());
 
             Assert.IsFalse(result.WatermarkDetected);
@@ -49,11 +49,6 @@ namespace HiddenWatermark.Tests
         private byte[] GetImageBytes()
         {
             return GetResourceBytes("HiddenWatermark.Tests.original.jpg");
-        }
-
-        private byte[] GetWatermarkBytes()
-        {
-            return GetResourceBytes("HiddenWatermark.Tests.watermark.jpg");
         }
 
         private byte[] GetResourceBytes(string resourceName)

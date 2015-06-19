@@ -62,9 +62,6 @@
   <ItemGroup>
     <EmbeddedResource Include="original.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="watermark.jpg" />
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
