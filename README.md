@@ -43,3 +43,7 @@ JPEG Quality 20% | ![7](http://mcsyko.github.io/Images/Watermark/7.jpg)
 Grayscale | ![8](http://mcsyko.github.io/Images/Watermark/8.jpg) *(not resistant)*
 PrintScreen | ![9](http://mcsyko.github.io/Images/Watermark/9.jpg)
 Noise | ![10](http://mcsyko.github.io/Images/Watermark/10.jpg)
+
+## Acknowledgements ##
+**Accord.NET:**
+http://accord-framework.net/
