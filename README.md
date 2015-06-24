@@ -4,7 +4,7 @@ Unlike steganographic methods, this hidden watermark if resistant to various for
 
 **Original Image** + **Watermark** = **Watermarked Image**
 
-![Original](http://mcsyko.github.io/Images/Watermark/original.jpg) + ![Watermark](http://mcsyko.github.io/Images/Watermark/watermark.jpg) = ![Embedded Image](http://mcsyko.github.io/Images/Watermark/embeddedwatermark.jpg)
+![Original](http://mchall.github.io/Images/Watermark/original.jpg) + ![Watermark](http://mchall.github.io/Images/Watermark/watermark.jpg) = ![Embedded Image](http://mchall.github.io/Images/Watermark/embeddedwatermark.jpg)
 
 > Image source: http://commons.wikimedia.org/wiki/Garden#/media/File:Rikugien3.jpg
 
@@ -33,16 +33,16 @@ var result = watermark.RetrieveAndEmbedWatermark(fileBytes);
 
 Attack | Recovered Watermark
 ------------ | -------------
-No Attack | ![1](http://mcsyko.github.io/Images/Watermark/1.jpg)
-Blur | ![2](http://mcsyko.github.io/Images/Watermark/2.jpg)
-Flip Horizontal | ![3](http://mcsyko.github.io/Images/Watermark/3.jpg)
-Resize (1024x768->360x270) | ![4](http://mcsyko.github.io/Images/Watermark/4.jpg)
-Visible Watermarking | ![5](http://mcsyko.github.io/Images/Watermark/5.jpg)
-Crop | ![6](http://mcsyko.github.io/Images/Watermark/6.jpg)
-JPEG Quality 20% | ![7](http://mcsyko.github.io/Images/Watermark/7.jpg)
-Grayscale | ![8](http://mcsyko.github.io/Images/Watermark/8.jpg) *(not resistant)*
-PrintScreen | ![9](http://mcsyko.github.io/Images/Watermark/9.jpg)
-Noise | ![10](http://mcsyko.github.io/Images/Watermark/10.jpg)
+No Attack | ![1](http://mchall.github.io/Images/Watermark/1.jpg)
+Blur | ![2](http://mchall.github.io/Images/Watermark/2.jpg)
+Flip Horizontal | ![3](http://mchall.github.io/Images/Watermark/3.jpg)
+Resize (1024x768->360x270) | ![4](http://mchall.github.io/Images/Watermark/4.jpg)
+Visible Watermarking | ![5](http://mchall.github.io/Images/Watermark/5.jpg)
+Crop | ![6](http://mchall.github.io/Images/Watermark/6.jpg)
+JPEG Quality 20% | ![7](http://mchall.github.io/Images/Watermark/7.jpg)
+Grayscale | ![8](http://mchall.github.io/Images/Watermark/8.jpg) *(not resistant)*
+PrintScreen | ![9](http://mchall.github.io/Images/Watermark/9.jpg)
+Noise | ![10](http://mchall.github.io/Images/Watermark/10.jpg)
 
 ## Acknowledgements ##
 **Accord.NET:**
