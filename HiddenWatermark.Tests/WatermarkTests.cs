@@ -47,10 +47,10 @@ namespace HiddenWatermark.Tests
         {
             var imgBytes = GetImageBytes();
             Random rand = new Random();
-            for(int i=0;i<1000;i++)
+            for (int i = 0; i < 1000; i++)
             {
-                int w = rand.Next(1000);
-                int h = rand.Next(1000);
+                int w = rand.Next(20);
+                int h = 100;
 
                 var wm = ScaledWatermarkCache.TryGetScaledWatermark(w, h);
                 if (wm == null)

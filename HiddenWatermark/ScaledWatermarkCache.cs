@@ -36,18 +36,23 @@ namespace HiddenWatermark
         {
             if (_cache.Count > CacheSize)
             {
-                var min = _count.Values.Min();
+                int min = 999;
+                foreach (var pair in _cache)
+                {
+                    if (_count[pair.Key] < min)
+                        min = _count[pair.Key];
+                }
+
                 foreach (var pair in _cache)
                 {
                     if (_count[pair.Key] == min)
                     {
                         byte[] val;
-                        bool res = _cache.TryRemove(pair.Key, out val);
+                        _cache.TryRemove(pair.Key, out val);
                         break;
                     }
                 }
             }
-
         }
 
         private static string ToKey(int width, int height)
