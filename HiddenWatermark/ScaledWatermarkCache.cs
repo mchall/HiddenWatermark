@@ -9,10 +9,10 @@ namespace HiddenWatermark
 {
     internal static class ScaledWatermarkCache
     {
-        private const int CacheSize = 10;
+        internal const int CacheSize = 10;
 
-        private static ConcurrentDictionary<string, int> _count = new ConcurrentDictionary<string, int>();
-        private static ConcurrentDictionary<string, byte[]> _cache = new ConcurrentDictionary<string, byte[]>();
+        internal static ConcurrentDictionary<string, int> _count = new ConcurrentDictionary<string, int>();
+        internal static ConcurrentDictionary<string, byte[]> _cache = new ConcurrentDictionary<string, byte[]>();
 
         public static byte[] TryGetScaledWatermark(int width, int height)
         {
@@ -37,16 +37,17 @@ namespace HiddenWatermark
             if (_cache.Count > CacheSize)
             {
                 var min = _count.Values.Min();
-                foreach (var pair in _count)
+                foreach (var pair in _cache)
                 {
-                    if (pair.Value == min)
+                    if (_count[pair.Key] == min)
                     {
                         byte[] val;
-                        _cache.TryRemove(pair.Key, out val);
+                        bool res = _cache.TryRemove(pair.Key, out val);
                         break;
                     }
                 }
             }
+
         }
 
         private static string ToKey(int width, int height)

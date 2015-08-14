@@ -42,6 +42,24 @@ namespace HiddenWatermark.Tests
             Assert.IsNotNull(result.WatermarkedImage);
         }
 
+        [TestMethod]
+        public void Watermark_Cache_Test()
+        {
+            var imgBytes = GetImageBytes();
+            Random rand = new Random();
+            for(int i=0;i<1000;i++)
+            {
+                int w = rand.Next(1000);
+                int h = rand.Next(1000);
+
+                var wm = ScaledWatermarkCache.TryGetScaledWatermark(w, h);
+                if (wm == null)
+                    ScaledWatermarkCache.AddScaledWatermark(w, h, imgBytes);
+            }
+
+            Assert.IsTrue(ScaledWatermarkCache._cache.Count == ScaledWatermarkCache.CacheSize);
+        }
+
         private byte[] GetImageBytes()
         {
             return GetResourceBytes("HiddenWatermark.Tests.original.jpg");
