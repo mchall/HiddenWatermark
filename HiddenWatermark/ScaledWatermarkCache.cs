@@ -28,8 +28,18 @@ namespace HiddenWatermark
         public static void AddScaledWatermark(int width, int height, byte[] watermarkBytes)
         {
             var key = ToKey(width, height);
-            _cache[key] = watermarkBytes;
-            TrimCache();
+            if (_count[key] >= SmallestCacheCount())
+            {
+                _cache[key] = watermarkBytes;
+                TrimCache();
+            }
+        }
+
+        private static int SmallestCacheCount()
+        {
+            if (_cache.Count == 0)
+                return 0;
+            return _count.Where(c => _cache.ContainsKey(c.Key)).Select(c => c.Value).Min();
         }
 
         private static void TrimCache()
