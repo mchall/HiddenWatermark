@@ -46,13 +46,7 @@ namespace HiddenWatermark
         {
             if (_cache.Count > CacheSize)
             {
-                int min = 999;
-                foreach (var pair in _cache)
-                {
-                    if (_count[pair.Key] < min)
-                        min = _count[pair.Key];
-                }
-
+                int min = SmallestCacheCount();
                 foreach (var pair in _cache)
                 {
                     if (_count[pair.Key] == min)
