@@ -35,38 +35,19 @@ namespace HiddenWatermark
         private const int BlockSize = 4;
 
         /// <summary>
-        /// Turn clipping support on/off
-        /// </summary>
-        public bool ClipSupport
-        {
-            get { return _imageHelper.ClipSupport; }
-            set { _imageHelper.ClipSupport = value; }
-        }
-
-        /// <summary>
         /// Creates a new watermarking class.
-        /// <para>This class caches some watermark data, so it's more efficient to keep an instance rather than create a new one for every embed operation.</para> 
-        /// <para>Defaults clipping sizes are 1024x768, 911x683, 832x624, 800x600, 744x558, 700x525, 640x480, 600x450, 568x426, 508x373, 480x360, 448x336, 400x300, 360x270, 333x250.</para> 
         /// </summary>
-        /// <param name="clipSupport">Whether the algorithm should support clipping</param>
-        /// <param name="clippingWidths">Custom clipping widths</param>
-        /// <param name="clippingHeights">Custom clipping heights</param>
-        public Watermark(bool clipSupport = false, IEnumerable<int> clippingWidths = null, IEnumerable<int> clippingHeights = null)
-            : this(DefaultWatermark, clipSupport, clippingWidths, clippingHeights)
+        public Watermark()
+            : this(DefaultWatermark)
         { }
 
         /// <summary>
         /// Creates a new watermarking class.
-        /// <para>This class caches some watermark data, so it's more efficient to keep an instance rather than create a new one for every embed operation.</para> 
-        /// <para>Defaults clipping sizes are 1024x768, 911x683, 832x624, 800x600, 744x558, 700x525, 640x480, 600x450, 568x426, 508x373, 480x360, 448x336, 400x300, 360x270, 333x250.</para> 
         /// </summary>
         /// <param name="watermarkBytes">32x32 watermark image</param>
-        /// <param name="clipSupport">Whether the algorithm should support clipping</param>
-        /// <param name="clippingWidths">Custom clipping widths</param>
-        /// <param name="clippingHeights">Custom clipping heights</param>
-        public Watermark(byte[] watermarkBytes, bool clipSupport = false, IEnumerable<int> clippingWidths = null, IEnumerable<int> clippingHeights = null)
+        public Watermark(byte[] watermarkBytes)
         {
-            _imageHelper = new ImageHelpers(clipSupport, clippingWidths, clippingHeights);
+            _imageHelper = new ImageHelpers();
 
             _watermarkPixels = _imageHelper.ReadPixels(watermarkBytes);
             if (_watermarkPixels.Height != WatermarkSize || _watermarkPixels.Width != WatermarkSize)
@@ -91,18 +72,8 @@ namespace HiddenWatermark
         }
 
         private void GenerateWatermarkDiff()
-        {
-            double[,] gray = new double[DiffWidth, DiffHeight];
-            for (int i = 0; i < DiffWidth; i++)
-            {
-                for (int j = 0; j < DiffHeight; j++)
-                {
-                    gray[i, j] = 0;
-                }
-            }
-
-            var rgbData = new RgbData(gray);
-            var yuv = rgbData.ToYuv();
+        {;
+            var yuv = new YuvData(DiffWidth, DiffHeight);
 
             EmbedWatermark(yuv.U);
 

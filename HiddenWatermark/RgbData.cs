@@ -35,23 +35,5 @@ namespace HiddenWatermark
             G = g;
             B = b;
         }
-
-        public YuvData ToYuv()
-        {
-            return new YuvData(this);
-        }
-
-        public double[,] ToU()
-        {
-            double[,] u = new double[Width, Height];
-            for (int i = 0; i < Width; i++)
-            {
-                for (int j = 0; j < Height; j++)
-                {
-                    u[i, j] = ColorSpaceConversion.RgbToU(R[i, j], G[i, j], B[i, j]);
-                }
-            }
-            return u;
-        }
     }
 }

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HiddenWatermark</RootNamespace>
     <AssemblyName>HiddenWatermark</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>a9993a1d</NuGetPackageImportStamp>
     <TargetFrameworkProfile />
@@ -23,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -50,7 +52,6 @@
     <Compile Include="Accord-net\CostineTransform.cs" />
     <Compile Include="Accord-net\Matrix.cs" />
     <Compile Include="Accord-net\ParallelHaar.cs" />
-    <Compile Include="ScaledWatermarkCache.cs" />
     <Compile Include="ImageHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WatermarkResult.cs" />

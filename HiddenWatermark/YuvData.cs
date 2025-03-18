@@ -22,21 +22,11 @@ namespace HiddenWatermark
             get { return Y.GetUpperBound(1) + 1; }
         }
 
-        public YuvData(RgbData rgb)
+        public YuvData(int width, int height)
         {
-            Y = new double[rgb.Width, rgb.Height];
-            U = new double[rgb.Width, rgb.Height];
-            V = new double[rgb.Width, rgb.Height];
-
-            for (int i = 0; i < rgb.Width; i++)
-            {
-                for (int j = 0; j < rgb.Height; j++)
-                {
-                    Y[i, j] = ColorSpaceConversion.RgbToY(rgb.R[i, j], rgb.G[i, j], rgb.B[i, j]);
-                    U[i, j] = ColorSpaceConversion.RgbToU(rgb.R[i, j], rgb.G[i, j], rgb.B[i, j]);
-                    V[i, j] = ColorSpaceConversion.RgbToV(rgb.R[i, j], rgb.G[i, j], rgb.B[i, j]);
-                }
-            }
+            Y = new double[width, height];
+            U = new double[width, height];
+            V = new double[width, height];
         }
 
         public RgbData ToRgb()

@@ -35,33 +35,6 @@ namespace Accord.Math
         private const double s0 = 0.5;
         private const double s1 = 0.5;
 
-        private int levels;
-
-        public ParallelHaar(int levels)
-        {
-            this.levels = levels;
-        }
-
-        public void Forward(double[] data)
-        {
-            FWT(data);
-        }
-
-        public void Backward(double[] data)
-        {
-            IWT(data);
-        }
-
-        public void Forward(double[,] data)
-        {
-            FWT(data, levels);
-        }
-
-        public void Backward(double[,] data)
-        {
-            IWT(data, levels);
-        }
-
         public static void FWT(double[] data)
         {
             double[] temp = new double[data.Length];

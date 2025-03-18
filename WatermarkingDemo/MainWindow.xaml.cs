@@ -34,7 +34,7 @@ namespace WatermarkingDemo
             var fileBytes = File.ReadAllBytes(_imageLocation);
             RenderImageBytes(OriginalImage, fileBytes);
 
-            _watermark = new Watermark(true);
+            _watermark = new Watermark();
         }
 
         private void BtnLoadImage_Click(object sender, RoutedEventArgs e)
