@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatermarkingDemo", "WatermarkingDemo\WatermarkingDemo.csproj", "{B047A6FD-F400-46D0-92D1-BFD258D354FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatermarkingDemo", "WatermarkingDemo\WatermarkingDemo.csproj", "{B047A6FD-F400-46D0-92D1-BFD258D354FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiddenWatermark", "HiddenWatermark\HiddenWatermark.csproj", "{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiddenWatermark", "HiddenWatermark\HiddenWatermark.csproj", "{C98C374A-9FF4-4C6D-BA5E-E1E1F102374E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
