@@ -100,12 +100,13 @@ namespace HiddenWatermark
         /// Embeds a watermark in an image and checks if the image already has a watermark
         /// </summary>
         /// <param name="imageBytes">Image bytes</param>
+        /// <param name="strength">Strength of the embedded watermark. Higher strengths might be more visible in an image, but lower strength might be difficult to retrieve.</param>
         /// <returns>Retrieve results and embedded image bytes in 'WatermarkedImage' property</returns>
-        public WatermarkResult RetrieveAndEmbedWatermark(byte[] imageBytes)
+        public WatermarkResult RetrieveAndEmbedWatermark(byte[] imageBytes, double strength = 1)
         {
             WatermarkResult result = new WatermarkResult();
             byte[] watermarkedImage = null;
-            Parallel.Invoke(() => result = RetrieveWatermark(imageBytes), () => watermarkedImage = EmbedWatermark(imageBytes));
+            Parallel.Invoke(() => result = RetrieveWatermark(imageBytes), () => watermarkedImage = EmbedWatermark(imageBytes, strength));
             result.WatermarkedImage = watermarkedImage;
             return result;
         }
@@ -114,10 +115,11 @@ namespace HiddenWatermark
         /// Embeds a watermark in an image
         /// </summary>
         /// <param name="imageBytes">Image bytes</param>
+        /// <param name="strength">Strength of the embedded watermark. Higher strengths might be more visible in an image, but lower strength might be difficult to retrieve.</param>
         /// <returns>Image bytes of embedded watermark</returns>
-        public byte[] EmbedWatermark(byte[] imageBytes)
+        public byte[] EmbedWatermark(byte[] imageBytes, double strength = 1)
         {
-            return _imageHelper.MergeWatermarkPixels(imageBytes, _watermarkDiff);
+            return _imageHelper.MergeWatermarkPixels(imageBytes, _watermarkDiff, strength);
         }
 
         /// <summary>

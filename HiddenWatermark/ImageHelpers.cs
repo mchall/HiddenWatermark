@@ -26,7 +26,7 @@ namespace HiddenWatermark
             return ReadPixels(image);
         }
 
-        public byte[] MergeWatermarkPixels(byte[] fileBytes, byte[] watermarkBytes)
+        public byte[] MergeWatermarkPixels(byte[] fileBytes, byte[] watermarkBytes, double strength)
         {
             var image = CreateImage(fileBytes);
 
@@ -50,9 +50,9 @@ namespace HiddenWatermark
                 {
                     var i = hPos + w;
 
-                    pixels[i] = ToByte(pixels[i] + 128 - wmPixels[i]);
-                    pixels[i + 1] = ToByte(pixels[i + 1] + 128 - wmPixels[i + 1]);
-                    //pixels[i + 2] = ToByte(pixels[i + 2] + 128 - wmPixels[i + 2]);
+                    pixels[i] = ToByte(pixels[i] + (strength * (128 - wmPixels[i])));
+                    pixels[i + 1] = ToByte(pixels[i + 1] + (strength * (128 - wmPixels[i + 1])));
+                    //pixels[i + 2] = ToByte(pixels[i + 2] + (strength * (128 - wmPixels[i + 2])));
                 }
             });
 
