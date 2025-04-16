@@ -95,6 +95,7 @@ namespace WatermarkingDemo
                 case 1: return 0.5f;
                 case 2: return 0.25f;
                 case 3: return 0.1f;
+                case 4: return 0f;
                 default: return 1f;
             }
         }

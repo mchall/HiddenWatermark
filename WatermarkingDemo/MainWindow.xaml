@@ -38,6 +38,7 @@
                 <ComboBoxItem Content="50%" />
                 <ComboBoxItem Content="25%" />
                 <ComboBoxItem Content="10%" />
+                <ComboBoxItem Content="0%" />
             </ComboBox>
             <Button x:Name="BtnEmbedWatermark" Content="Embed Watermark" Margin="5" Click="BtnEmbedWatermark_Click" FontSize="16" />
             <TextBlock x:Name="EmbedTime" Margin="5" FontSize="12" />
