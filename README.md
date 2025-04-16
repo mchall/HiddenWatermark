@@ -23,7 +23,7 @@ The following code instantiates the watermark class with the bytes read from a 3
 
 ```C#
 var watermarkBytes = File.ReadAllBytes(watermarkLocation);
-Watermark watermark = new Watermark(watermarkBytes, true);
+Watermark watermark = new Watermark(watermarkBytes);
 
 var fileBytes = File.ReadAllBytes(imageLocation);
 var result = watermark.RetrieveAndEmbedWatermark(fileBytes);
