@@ -32,7 +32,13 @@
         </StackPanel>
         
         <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="5">
-            <Button x:Name="BtnLoadImage" Content="Load" Margin="5" Click="BtnLoadImage_Click" FontSize="16" />
+            <Button x:Name="BtnLoadImage" Content="Load" Margin="5" Click="BtnLoadImage_Click" FontSize="16" />            
+            <ComboBox x:Name="CmbEmbedStrength" Margin="5" FontSize="16" >
+                <ComboBoxItem Content="100%" IsSelected="True" />
+                <ComboBoxItem Content="50%" />
+                <ComboBoxItem Content="25%" />
+                <ComboBoxItem Content="10%" />
+            </ComboBox>
             <Button x:Name="BtnEmbedWatermark" Content="Embed Watermark" Margin="5" Click="BtnEmbedWatermark_Click" FontSize="16" />
             <TextBlock x:Name="EmbedTime" Margin="5" FontSize="12" />
         </StackPanel>

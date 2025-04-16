@@ -77,7 +77,7 @@ namespace WatermarkingDemo
             var fileBytes = File.ReadAllBytes(_imageLocation);
 
             var sw = Stopwatch.StartNew();
-            var embeddedBytes = _watermark.EmbedWatermark(fileBytes);
+            var embeddedBytes = _watermark.EmbedWatermark(fileBytes, GetStength());
             //var embeddedBytes = _watermark.RetrieveAndEmbedWatermark(fileBytes).WatermarkedImage;
             sw.Stop();
 
@@ -86,6 +86,17 @@ namespace WatermarkingDemo
 
             File.WriteAllBytes(_watermarkImageLocation, embeddedBytes);
             RenderImageBytes(WatermarkedImage, embeddedBytes);
+        }
+
+        private double GetStength()
+        {
+            switch (CmbEmbedStrength.SelectedIndex)
+            {
+                case 1: return 0.5f;
+                case 2: return 0.25f;
+                case 3: return 0.1f;
+                default: return 1f;
+            }
         }
 
         private void BtnRetrieveWatermark_Click(object sender, RoutedEventArgs e)
