@@ -40,7 +40,7 @@ namespace WatermarkingDemo
         private void BtnLoadImage_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image|*.jpg;*.png;*.gif;*.bmp";
+            ofd.Filter = "Image|*.jpg;*.png;*.gif;*.bmp;*.webp";
             if (ofd.ShowDialog() == true)
             {
                 _imageLocation = ofd.FileName;
@@ -53,7 +53,7 @@ namespace WatermarkingDemo
         private void BtnLoadWatermarkedImage_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image|*.jpg;*.png;*.gif;*.bmp";
+            ofd.Filter = "Image|*.jpg;*.png;*.gif;*.bmp;*.webp";
             if (ofd.ShowDialog() == true)
             {
                 _watermarkImageLocation = ofd.FileName;
